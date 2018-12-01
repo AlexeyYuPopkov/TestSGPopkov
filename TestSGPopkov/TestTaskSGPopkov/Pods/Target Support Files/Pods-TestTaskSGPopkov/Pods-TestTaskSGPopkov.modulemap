@@ -1,0 +1,6 @@
+framework module Pods_TestTaskSGPopkov {
+  umbrella header "Pods-TestTaskSGPopkov-umbrella.h"
+
+  export *
+  module * { export * }
+}
