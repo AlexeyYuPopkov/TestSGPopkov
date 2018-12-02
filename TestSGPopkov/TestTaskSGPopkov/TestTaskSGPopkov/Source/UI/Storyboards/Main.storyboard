@@ -170,12 +170,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-cI-Imy">
-                                            <rect key="frame" x="70.5" y="8" width="16" height="16"/>
+                                            <rect key="frame" x="52.5" y="8" width="34" height="34"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="16" id="EDT-oE-qKV"/>
-                                                <constraint firstAttribute="width" constant="16" id="PKA-Uh-ibA"/>
+                                                <constraint firstAttribute="height" constant="34" id="EDT-oE-qKV"/>
+                                                <constraint firstAttribute="width" constant="34" id="PKA-Uh-ibA"/>
                                             </constraints>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="10"/>
                                             <state key="normal" image="DeleteCheckmark"/>
+                                            <connections>
+                                                <action selector="didCheckmarckStataChanged:" destination="uKc-SX-Rwk" eventType="touchUpInside" id="vrT-aj-Mdc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>

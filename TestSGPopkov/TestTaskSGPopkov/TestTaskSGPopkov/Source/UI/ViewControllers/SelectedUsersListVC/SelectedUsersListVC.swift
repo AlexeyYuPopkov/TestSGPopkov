@@ -47,6 +47,15 @@ class SelectedUsersListVC: BaseCollectionVC, ShowAlertHelperProtocol
             .bind(to: collectionView.rx.items(dataSource: vm.selectUsersDataSource))
             .disposed(by: disposeBag)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? CollectionUserCell {
+            cell.handleTap = { [weak self] cell in
+                guard let vm = cell.vm else { return }
+                self?.vm.removeRow(at: indexPath.row)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -125,7 +134,7 @@ extension SelectedUsersListVC
                 switch dataSource[indexPath.section].itemsType {
                 case .user:
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionUserCell
-
+                    cell.vm = item.model as? UserVM
                     return cell
                 }
         },
