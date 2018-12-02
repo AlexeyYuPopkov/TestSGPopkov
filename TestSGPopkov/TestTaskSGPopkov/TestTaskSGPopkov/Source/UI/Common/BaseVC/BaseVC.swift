@@ -17,6 +17,7 @@ enum NavigationBarStyle {
 
 protocol BaseVCProtocol: BaseVCAppearanceProtocol
 {
+    func adjustNavigationBarAppearance()
 }
 
 typealias BaseViewControllerProtocol = UIViewController & BaseVCProtocol
@@ -45,6 +46,10 @@ class BaseVC: UIViewController, BaseVCProtocol
     
     func preferredNavigationBarAppearanceStyle() -> NavigationBarAppearanceStyle {
         return .visible
+    }
+    
+    func adjustNavigationBarAppearance() {
+        defaultNavigationBarAppearance()
     }
 }
 
@@ -76,6 +81,10 @@ class BaseTVC: UITableViewController, BaseVCProtocol
     func preferredNavigationBarAppearanceStyle() -> NavigationBarAppearanceStyle {
         return .visible
     }
+    
+    func adjustNavigationBarAppearance() {
+        defaultNavigationBarAppearance()
+    }
 }
 
 // MARK: BaseTVC
@@ -105,11 +114,22 @@ class BaseCollectionVC: UICollectionViewController, BaseVCProtocol
     func preferredNavigationBarAppearanceStyle() -> NavigationBarAppearanceStyle {
         return .visible
     }
+    
+    func adjustNavigationBarAppearance() {
+        defaultNavigationBarAppearance()
+    }
 }
 
 // MARK: AppearanceProtocol
 
-fileprivate extension NavigationBarAppearanceProtocol where Self: UIViewController
+extension BaseVCAppearanceProtocol where Self: UIViewController 
+{
+    var barButtonsTintColor: UIColor {
+        return UIColor.white
+    }
+}
+
+fileprivate extension NavigationBarAppearanceProtocol where Self: UIViewController & BaseVCProtocol
 {
     fileprivate func updateNavigationBarStyleAnimated(animated: Bool)
     {
@@ -131,7 +151,44 @@ fileprivate extension NavigationBarAppearanceProtocol where Self: UIViewControll
         
         navigationController.setNavigationBarHidden(isHidden, animated: animated);
         navigationController.navigationBar.barStyle = .default
-//        (self as? BaseVCProtocol)?.preferredNavigationBarAppearance()
+        adjustNavigationBarAppearance()
+    }
+    
+    func createFilledImage(rect: CGRect, color: UIColor) -> UIImage
+    {
+        UIGraphicsBeginImageContext(rect.size)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        
+        return UIGraphicsGetImageFromCurrentImageContext()!
+    }
+    
+    func imageWithColor(color: UIColor) -> UIImage {
+        return self.createFilledImage(rect: CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0), color: color)
+    }
+    
+
+    
+    func defaultNavigationBarAppearance() {
+        guard let bar = self.navigationController?.navigationBar else {
+            return
+        }
+        
+        bar.barStyle = .black
+        bar.barTintColor = UIColor.white
+        bar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        bar.items?.forEach({
+//            $0.leftBarButtonItems?.forEach { $0.tintColor = UIColor.white }
+//            $0.rightBarButtonItems?.forEach { $0.tintColor = UIColor.white }
+//        })
+
+        bar.setBackgroundImage(self.imageWithColor(color: UIColor.black), for: .default)
+        bar.shadowImage = self.imageWithColor(color: UIColor.darkGray)
     }
 }
 

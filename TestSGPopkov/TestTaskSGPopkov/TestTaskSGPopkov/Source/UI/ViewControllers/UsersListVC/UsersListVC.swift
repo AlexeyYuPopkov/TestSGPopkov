@@ -13,7 +13,7 @@ import RxDataSources
 
 fileprivate var FooterRefreshViewHeight: CGFloat = 30.0
 
-final class UsersListVC: BaseTVC, ShowAlertHelperProtocol
+final class UsersListVC: BaseTVC
 {
     typealias VM = UsersListVCVMProtocol
     typealias Section = CommonRxDataSourceModels.Section

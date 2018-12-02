@@ -16,7 +16,7 @@ protocol SelectedUsersListVCVMProtocol
 {
     var selectUsersDataSource: RxCollectionViewSectionedAnimatedDataSource<CommonRxDataSourceModels.Section>! { get set }
     var selectedUsersSubj: BehaviorSubject<[CommonRxDataSourceModels.Section]> { get }
-    func removeRow(at index: Int)
+    func removeRow(_ row: CommonRxDataSourceModels.Row)
 }
 
 protocol UsersListVCVMProtocol
@@ -57,19 +57,17 @@ final class SelectUserVCVM: SelectedUsersListVCVMProtocol, UsersListVCVMProtocol
 
 extension SelectUserVCVM
 {
-    func removeRow(at index: Int)
+    func removeRow(_ row: CommonRxDataSourceModels.Row)
     {
-        if selectUsersDataSource.sectionModels[0].items.indices.contains(index) == true {
-            var newItems = selectUsersDataSource.sectionModels[0].items
-            
-            let removed = newItems.remove(at: index)
-            
-            selectedUsersSubj.onNext([Section(items: newItems, itemsType: .user, header: nil)])
-            
-            dataSource.sectionModels[0].items.forEach { item in
-                if item.hashValue == removed.hashValue {
-                    (item.model as? UserVM)?.isSelected.onNext(false)
-                }
+        let newItems = selectUsersDataSource.sectionModels[0].items.filter {
+            return row.identity != $0.identity
+        }
+        
+        selectedUsersSubj.onNext([Section(items: newItems, itemsType: .user, header: nil)])
+        
+        dataSource.sectionModels[0].items.forEach { item in
+            if item.identity == row.identity {
+                (item.model as? UserVM)?.isSelected.onNext(false)
             }
         }
     }

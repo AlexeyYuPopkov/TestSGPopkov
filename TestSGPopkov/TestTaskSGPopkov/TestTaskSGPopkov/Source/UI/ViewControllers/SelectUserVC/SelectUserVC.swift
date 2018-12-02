@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
-class SelectUserVC: BaseVC, ShowAlertHelperProtocol
+class SelectUserVC: BaseVC, ShowAlertHelperProtocol, LayoutHelperProtocol, CommonNavBarVCHelperProtocol
 {
+    enum Route {
+        case next
+    }
+    
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var bottomContainerView: UIView!
     
@@ -19,14 +24,35 @@ class SelectUserVC: BaseVC, ShowAlertHelperProtocol
     private lazy var usersListVC = navigationAssembly.assemblyUsersListVC(vm: vm)
     private lazy var vm = SelectUserVCVM(networkClient: components.networkClient)
     
+    let disposeBag = DisposeBag()
+    
+    var onRoute: ((Route) -> Void)?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setupChildsViewControllers()
+        configure()
+    }
+    
+    private func configure()
+    {
+        title = "Selected Users"
+        configureRightNavigationBarButton(title: "Next", isEnabled: true) { [weak self] button in
+            self?.onRoute?(Route.next)
+        }
+
+        vm.selectedUsersSubj
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] sections in
+            guard let `self` = self else { return }
+            self.isNavigationBarRightButtonEnabled = sections.count > 0 && sections[0].items.count > 0
+        }).disposed(by: disposeBag)
     }
     
     private func setupChildsViewControllers()
     {
+        selectedUsersListVC.disposeBag = disposeBag
         addChild(selectedUsersListVC)
         topContainerView.addSubview(selectedUsersListVC.view)
         addAnchors(to: selectedUsersListVC.view, withSuperview: topContainerView)
@@ -36,22 +62,6 @@ class SelectUserVC: BaseVC, ShowAlertHelperProtocol
         bottomContainerView.addSubview(usersListVC.view)
         addAnchors(to: usersListVC.view, withSuperview: bottomContainerView)
         usersListVC.didMove(toParent: self)
-
     }
 }
 
-// MARK: Private
-
-extension SelectUserVC
-{
-    private func addAnchors(to view: UIView, withSuperview superview: UIView)
-    {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0),
-            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0),
-            view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0)
-            ])
-    }
-}
