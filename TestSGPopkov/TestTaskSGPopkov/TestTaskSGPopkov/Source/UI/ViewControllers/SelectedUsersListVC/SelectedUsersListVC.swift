@@ -7,21 +7,45 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "CollectionUserCell"
 
-class SelectedUsersListVC: UICollectionViewController {
-
-    override func viewDidLoad() {
+class SelectedUsersListVC: BaseCollectionVC, ShowAlertHelperProtocol
+{
+    typealias Section = CommonRxDataSourceModels.Section
+    var vm: SelectedUsersListVCVMProtocol!
+    
+    let disposeBag = DisposeBag()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+//        vm.targetVC = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+        collectionView.delegate = self
+        collectionView.dataSource = nil
+        
+        vm.selectUsersDataSource = self.createDataSource()
+        
+        vm.selectedUsersSubj
+//            .do(onNext: { [weak self] _ in
+//                self?.bottomActivityIndicator.stopAnimating()
+//                self?.tableView.tableFooterView?.isHidden = true
+//            })
+            .bind(to: collectionView.rx.items(dataSource: vm.selectUsersDataSource))
+            .disposed(by: disposeBag)
     }
 
     /*
@@ -36,24 +60,24 @@ class SelectedUsersListVC: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of items
+//        return 0
+//    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> CollectionUserCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionUserCell
+//    
+//        // Configure the cell
+//    
+//        return cell
+//    }
 
     // MARK: UICollectionViewDelegate
 
@@ -86,4 +110,29 @@ class SelectedUsersListVC: UICollectionViewController {
     }
     */
 
+}
+
+// MARK: Create Data Source
+
+extension SelectedUsersListVC
+{
+    func createDataSource() -> RxCollectionViewSectionedAnimatedDataSource<Section> {
+        let result = RxCollectionViewSectionedAnimatedDataSource<Section>(
+            animationConfiguration: AnimationConfiguration(insertAnimation: .top,
+                                                           reloadAnimation: .fade,
+                                                           deleteAnimation: .left),
+            configureCell: { dataSource, collectionView, indexPath, item in
+                switch dataSource[indexPath.section].itemsType {
+                case .user:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionUserCell
+
+                    return cell
+                }
+        },
+            configureSupplementaryView: { (_, _, _, _) in
+                return UICollectionReusableView(frame: CGRect.zero)
+        })
+
+        return result
+    }
 }

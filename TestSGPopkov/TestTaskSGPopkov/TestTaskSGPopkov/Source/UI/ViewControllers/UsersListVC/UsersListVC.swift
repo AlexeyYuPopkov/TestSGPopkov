@@ -13,13 +13,15 @@ import RxDataSources
 
 fileprivate var FooterRefreshViewHeight: CGFloat = 30.0
 
-class UsersListVC: BaseTVC, ShowAlertHelperProtocol
+final class UsersListVC: BaseTVC, ShowAlertHelperProtocol
 {
-    typealias VM = UsersListVCVM
-    lazy var vm = VM(networkClient: ComponentsAssembly.shared.networkClient)
+    typealias VM = UsersListVCVMProtocol
+    typealias Section = CommonRxDataSourceModels.Section
     let disposeBag = DisposeBag()
     
-    lazy var bottomActivityIndicator = UIActivityIndicatorView()
+    var vm: VM!
+    
+    private lazy var bottomActivityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad()
     {
@@ -30,7 +32,7 @@ class UsersListVC: BaseTVC, ShowAlertHelperProtocol
         
         vm.dataSource = self.createDataSource()
         
-        vm.sectionBehaviorSubj
+        vm.userListSectionsSubj
             .do(onNext: { [weak self] _ in
                 self?.bottomActivityIndicator.stopAnimating()
                 self?.tableView.tableFooterView?.isHidden = true
@@ -52,10 +54,7 @@ class UsersListVC: BaseTVC, ShowAlertHelperProtocol
                 let currentOffset = contentOffset.y
                 let maximumOffset = self.tableView.contentSize.height - self.tableView.frame.size.height
                 let deltaOffset = maximumOffset - currentOffset
-                
-//                let tableFooterViewIsHidden = self.tableView.tableFooterView?.isHidden
-//                let bottomActivityIndicatorIsAnimating = self.bottomActivityIndicator.isAnimating
-                
+
                 if deltaOffset <= FooterRefreshViewHeight &&
                     self.tableView.tableFooterView?.isHidden == true &&
                     self.bottomActivityIndicator.isAnimating == false
@@ -86,8 +85,8 @@ extension UsersListVC
         tableView.tableFooterView?.isHidden = true
     }
     
-    func createDataSource() -> RxTableViewSectionedAnimatedDataSource<VM.Section> {
-        let result = RxTableViewSectionedAnimatedDataSource<VM.Section>(
+    func createDataSource() -> RxTableViewSectionedAnimatedDataSource<Section> {
+        let result = RxTableViewSectionedAnimatedDataSource<Section>(
             animationConfiguration: AnimationConfiguration(insertAnimation: .top,
                                                            reloadAnimation: .fade,
                                                            deleteAnimation: .left),
@@ -110,10 +109,11 @@ extension UsersListVC //: UITableViewDelegate
 {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? UsersListCell {
-            cell.handleTap = { cell in
-                guard let vm = cell.vm else { return }
-                let newValue = try? !vm.isSelected.value()
-                vm.isSelected.onNext(newValue ?? false)
+            cell.handleTap = { [weak self] cell in
+                guard let vm = cell.vm,
+                let newValue = try? !vm.isSelected.value() else { return }
+                vm.isSelected.onNext(newValue)
+                self?.vm.userDidSelected()
             }
         }
     }

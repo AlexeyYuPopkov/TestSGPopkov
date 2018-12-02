@@ -27,13 +27,18 @@
 		C5DC9CAC21B2D0DC009569E7 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CAA21B2D0DC009569E7 /* StringHelper.swift */; };
 		C5DC9CAE21B2D114009569E7 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CAD21B2D114009569E7 /* Support.swift */; };
 		C5DC9CB121B2D27E009569E7 /* GetUsersResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CB021B2D27E009569E7 /* GetUsersResult.swift */; };
-		C5DC9CB421B2D63C009569E7 /* UsersListVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CB321B2D63C009569E7 /* UsersListVCVM.swift */; };
-		C5DC9CB621B3F59E009569E7 /* UsersListVCVM+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CB521B3F59E009569E7 /* UsersListVCVM+Enums.swift */; };
 		C5DC9CB821B3FD8A009569E7 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CB721B3FD8A009569E7 /* UserVM.swift */; };
 		C5DC9CBD21B406C7009569E7 /* KF_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CBC21B406C7009569E7 /* KF_ImageView.swift */; };
 		C5DC9CBF21B4155C009569E7 /* ShowAlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CBE21B4155C009569E7 /* ShowAlertHelperProtocol.swift */; };
 		C5DC9CC421B415B7009569E7 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CC121B415B7009569E7 /* BaseVC.swift */; };
 		C5DC9CC621B415B7009569E7 /* BaseVCAppearanceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CC321B415B7009569E7 /* BaseVCAppearanceProtocol.swift */; };
+		C5DC9CCB21B428A8009569E7 /* CollectionUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CCA21B428A8009569E7 /* CollectionUserCell.swift */; };
+		C5DC9CD221B42E0F009569E7 /* CommonRxDataSourceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD121B42E0F009569E7 /* CommonRxDataSourceModels.swift */; };
+		C5DC9CD921B439A1009569E7 /* NavigationAssembly+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD621B439A1009569E7 /* NavigationAssembly+Enums.swift */; };
+		C5DC9CDA21B439A1009569E7 /* NavigationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD721B439A1009569E7 /* NavigationAssembly.swift */; };
+		C5DC9CDB21B439A1009569E7 /* NavigationAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD821B439A1009569E7 /* NavigationAssemblyProtocol.swift */; };
+		C5DC9CDF21B43EB1009569E7 /* ComponentsAssembly+VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */; };
+		C5DC9CE121B44B18009569E7 /* SelectUserVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,13 +66,18 @@
 		C5DC9CAA21B2D0DC009569E7 /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		C5DC9CAD21B2D114009569E7 /* Support.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		C5DC9CB021B2D27E009569E7 /* GetUsersResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersResult.swift; sourceTree = "<group>"; };
-		C5DC9CB321B2D63C009569E7 /* UsersListVCVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListVCVM.swift; sourceTree = "<group>"; };
-		C5DC9CB521B3F59E009569E7 /* UsersListVCVM+Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersListVCVM+Enums.swift"; sourceTree = "<group>"; };
 		C5DC9CB721B3FD8A009569E7 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		C5DC9CBC21B406C7009569E7 /* KF_ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KF_ImageView.swift; sourceTree = "<group>"; };
 		C5DC9CBE21B4155C009569E7 /* ShowAlertHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowAlertHelperProtocol.swift; path = Helpers/ShowAlertHelperProtocol.swift; sourceTree = "<group>"; };
 		C5DC9CC121B415B7009569E7 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		C5DC9CC321B415B7009569E7 /* BaseVCAppearanceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVCAppearanceProtocol.swift; sourceTree = "<group>"; };
+		C5DC9CCA21B428A8009569E7 /* CollectionUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUserCell.swift; sourceTree = "<group>"; };
+		C5DC9CD121B42E0F009569E7 /* CommonRxDataSourceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRxDataSourceModels.swift; sourceTree = "<group>"; };
+		C5DC9CD621B439A1009569E7 /* NavigationAssembly+Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationAssembly+Enums.swift"; sourceTree = "<group>"; };
+		C5DC9CD721B439A1009569E7 /* NavigationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAssembly.swift; sourceTree = "<group>"; };
+		C5DC9CD821B439A1009569E7 /* NavigationAssemblyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAssemblyProtocol.swift; sourceTree = "<group>"; };
+		C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComponentsAssembly+VM.swift"; sourceTree = "<group>"; };
+		C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserVCVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,8 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				C5DC9C8921B2CA2B009569E7 /* UsersListVC.swift */,
-				C5DC9CB321B2D63C009569E7 /* UsersListVCVM.swift */,
-				C5DC9CB521B3F59E009569E7 /* UsersListVCVM+Enums.swift */,
 				C5DC9C8A21B2CA2B009569E7 /* Views */,
 			);
 			path = UsersListVC;
@@ -219,6 +227,7 @@
 		C5DC9C8E21B2CBDE009569E7 /* SelectedUsersListVC */ = {
 			isa = PBXGroup;
 			children = (
+				C5DC9CC721B42855009569E7 /* Views */,
 				C5DC9C9221B2CC2C009569E7 /* SelectedUsersListVC.swift */,
 			);
 			path = SelectedUsersListVC;
@@ -227,6 +236,7 @@
 		C5DC9C8F21B2CBDE009569E7 /* SelectUserVC */ = {
 			isa = PBXGroup;
 			children = (
+				C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */,
 				C5DC9C9021B2CBFC009569E7 /* SelectUserVC.swift */,
 			);
 			path = SelectUserVC;
@@ -243,6 +253,7 @@
 		C5DC9C9521B2CD08009569E7 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				C5DC9CD521B439A1009569E7 /* NavigationAssembly */,
 				C5DC9C9921B2CD5F009569E7 /* ComponentsAssembly */,
 			);
 			path = Assembly;
@@ -261,6 +272,7 @@
 			children = (
 				C5DC9C9A21B2CD5F009569E7 /* ComponentsAssemblyProtocol.swift */,
 				C5DC9C9B21B2CD5F009569E7 /* ComponentsAssembly.swift */,
+				C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */,
 			);
 			path = ComponentsAssembly;
 			sourceTree = "<group>";
@@ -303,6 +315,7 @@
 		C5DC9CB921B406C7009569E7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5DC9CD021B42DE6009569E7 /* VM */,
 				C5DC9CC021B415B7009569E7 /* BaseVC */,
 				C5DC9CBE21B4155C009569E7 /* ShowAlertHelperProtocol.swift */,
 				C5DC9CBA21B406C7009569E7 /* Views */,
@@ -333,6 +346,32 @@
 				C5DC9CC321B415B7009569E7 /* BaseVCAppearanceProtocol.swift */,
 			);
 			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		C5DC9CC721B42855009569E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC9CCA21B428A8009569E7 /* CollectionUserCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5DC9CD021B42DE6009569E7 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC9CD121B42E0F009569E7 /* CommonRxDataSourceModels.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		C5DC9CD521B439A1009569E7 /* NavigationAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				C5DC9CD621B439A1009569E7 /* NavigationAssembly+Enums.swift */,
+				C5DC9CD721B439A1009569E7 /* NavigationAssembly.swift */,
+				C5DC9CD821B439A1009569E7 /* NavigationAssemblyProtocol.swift */,
+			);
+			path = NavigationAssembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,23 +508,28 @@
 				C5DC9CB821B3FD8A009569E7 /* UserVM.swift in Sources */,
 				C5DC9CBD21B406C7009569E7 /* KF_ImageView.swift in Sources */,
 				C5DC9CA521B2CDCA009569E7 /* NetworkClientObjectMapper+Users.swift in Sources */,
+				C5DC9CCB21B428A8009569E7 /* CollectionUserCell.swift in Sources */,
 				C5DC9C9D21B2CD5F009569E7 /* ComponentsAssembly.swift in Sources */,
+				C5DC9CD221B42E0F009569E7 /* CommonRxDataSourceModels.swift in Sources */,
 				C5DC9C8421B2C943009569E7 /* AppDelegate.swift in Sources */,
+				C5DC9CDA21B439A1009569E7 /* NavigationAssembly.swift in Sources */,
 				C5DC9CAC21B2D0DC009569E7 /* StringHelper.swift in Sources */,
 				C5DC9C9121B2CBFC009569E7 /* SelectUserVC.swift in Sources */,
 				C5DC9C8D21B2CA5A009569E7 /* UsersListCell.swift in Sources */,
-				C5DC9CB421B2D63C009569E7 /* UsersListVCVM.swift in Sources */,
 				C5DC9CBF21B4155C009569E7 /* ShowAlertHelperProtocol.swift in Sources */,
+				C5DC9CD921B439A1009569E7 /* NavigationAssembly+Enums.swift in Sources */,
+				C5DC9CDF21B43EB1009569E7 /* ComponentsAssembly+VM.swift in Sources */,
 				C5DC9CA321B2CDCA009569E7 /* NetworkClient.swift in Sources */,
+				C5DC9CE121B44B18009569E7 /* SelectUserVCVM.swift in Sources */,
 				C5DC9CC621B415B7009569E7 /* BaseVCAppearanceProtocol.swift in Sources */,
 				C5DC9CA621B2CDCA009569E7 /* NetworkClientObjectMapper.swift in Sources */,
+				C5DC9CDB21B439A1009569E7 /* NavigationAssemblyProtocol.swift in Sources */,
 				C5DC9C9821B2CD58009569E7 /* RegisteredInstancesManager.swift in Sources */,
 				C5DC9C9C21B2CD5F009569E7 /* ComponentsAssemblyProtocol.swift in Sources */,
 				C5DC9CAE21B2D114009569E7 /* Support.swift in Sources */,
 				C5DC9C8B21B2CA2B009569E7 /* UsersListVC.swift in Sources */,
 				C5DC9CAB21B2D0DC009569E7 /* DebugHelper.swift in Sources */,
 				C5DC9CA421B2CDCA009569E7 /* NetworkClientProtocol.swift in Sources */,
-				C5DC9CB621B3F59E009569E7 /* UsersListVCVM+Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

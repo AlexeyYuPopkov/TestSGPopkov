@@ -7,28 +7,19 @@
 //
 
 protocol ComponentsAssemblyProtocol:
-    ComponentsAssemblyManagersProtocol //,
-//    ComponentsAssemblyDataSourcesProtocol,
-//    ComponentsAssemblyValidatorsProtocol
+    ComponentsAssemblyManagersProtocol,
+    ComponentsUsersViewControllersModels
 {
-//    var localization: LocalizationProtocol  { get }
 }
 
 protocol ComponentsAssemblyManagersProtocol {
     var networkClient: NetworkClientProtocol { get }
 }
 
+protocol ComponentsUsersViewControllersModels
+{
+//    var usersListVCVM: UsersListVCVM { get }
+//    var selectedUsersListVCVM: SelectedUsersListVCVM { get }
+//    func selectUserVCVM(selectedUsersListVCVM: SelectedUsersListVCVM, sersListVCVM: UsersListVCVM)
+}
 
-//protocol ComponentsAssemblyDataSourcesProtocol
-//{
-//    var savedUsersDataSource: SavedUsersDataSourceProtocol { get }
-//    var usersDataSource: UsersDataSourceProtocol { get }
-//    func userProfileDataSource(_ user: UpdatedUser) -> UserProfileDataSourceProtocol
-//}
-//
-//protocol ComponentsAssemblyValidatorsProtocol
-//{
-//    var userNameValidator: InputFieldValidatorProtocol { get }
-//    var emailValidator: InputFieldValidatorProtocol  { get }
-//    var phoneValidator: InputFieldIsValidProtocol { get }
-//}

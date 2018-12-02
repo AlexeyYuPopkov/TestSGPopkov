@@ -10,7 +10,7 @@ import Foundation
 
 final class ComponentsAssembly: ComponentsAssemblyProtocol
 {
-    static let shared = ComponentsAssembly()
+    static let shared: ComponentsAssemblyProtocol = ComponentsAssembly()
     lazy var instancesManager = RegisteredInstancesManager()
 
 //    lazy var localization: LocalizationProtocol = Localization()
@@ -39,8 +39,6 @@ extension ComponentsAssembly
         return instancesManager.instanceForClass(NetworkClientObjectMapper.self,
                                                  constructor: constructor) as! NetworkClientObjectMapper
     }
-    
-
 }
 
 // MARK: ComponentsAssemblyDataSourcesProtocol

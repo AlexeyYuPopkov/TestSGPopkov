@@ -18,6 +18,10 @@ class UserVM: Hashable
     let user: GetUsersResult
     var isSelected: BehaviorSubject<Bool>
     
+    var userId: Int {
+        return user.id
+    }
+    
     var login: String {
         return user.login
     }

@@ -1,5 +1,5 @@
 //
-//  UsersListVCVM+Enums.swift
+//  CommonRxDataSourceModels.swift
 //  TestTaskSGPopkov
 //
 //  Created by Alexey Popkov on 12/2/18.
@@ -9,7 +9,7 @@
 import Foundation
 import RxDataSources
 
-extension UsersListVCVM
+struct CommonRxDataSourceModels
 {
     struct Section:
         SectionModelType,
@@ -54,7 +54,7 @@ extension UsersListVCVM
     }
 }
 
-extension UsersListVCVM
+extension CommonRxDataSourceModels
 {
     class Row: IdentifiableType, Equatable, Hashable
     {
