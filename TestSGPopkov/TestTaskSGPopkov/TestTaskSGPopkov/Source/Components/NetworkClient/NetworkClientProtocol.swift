@@ -11,13 +11,8 @@ import RxSwift
 
 protocol NetworkClientProtocol: NetworkClientUsersProtocol
 {
-//    func getUsers(page: Int,
-//                  limit: Int,
-//                  success: ((_ result: GetUsersResult?) -> Void)?,
-//                  failure: ErrorCompletion?)
-    
 }
 
 protocol NetworkClientUsersProtocol {
-    func getUsers(page: Int, limit: Int) -> Observable<GetUsersResult?>
+    func getUsers(lastUserId: Int?, limit: Int) -> Observable<[GetUsersResult]>
 }

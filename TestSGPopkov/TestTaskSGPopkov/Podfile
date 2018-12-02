@@ -11,14 +11,15 @@ platform :ios, '10.0'
 
 def all_pods
     #Network
-    pod 'Alamofire'#, '~> 4.7'
-    pod 'AlamofireNetworkActivityIndicator' #, '~> 2.2'
+    pod 'AlamofireNetworkActivityIndicator'
 
     pod 'Kingfisher', '~> 4.0'
 
-    pod 'RxSwift'#,    '~> 4.2.0'
-    pod 'RxCocoa'#,    '~> 4.2.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'RxAlamofire'
+    pod 'RxKeyboard'
+    pod 'RxDataSources', '~> 3.0'
 
 end
 

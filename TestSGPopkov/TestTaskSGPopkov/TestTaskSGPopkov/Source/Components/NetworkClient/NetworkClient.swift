@@ -37,21 +37,24 @@ final class NetworkClient: NetworkClientProtocol
         )
     }
     
-    let disposeBag = DisposeBag()
+    
 }
 
 extension NetworkClient
 {
     enum UsersRouter: URLRequestConvertible {
-        case getUsers(page: Int, limit: Int)
+        case getUsers(lastUserId: Int?, limit: Int)
         
         func asURLRequest() throws -> URLRequest {
             switch self {
-            case .getUsers(let page, let limit):
+            case .getUsers(let lastUserId, let limit):
                 let path = "\(NetworkClient.HostName)/users"
                 var urlRequest = URLRequest(url: URL(string: path)!)
                 urlRequest.httpMethod = HTTPMethod.get.rawValue
-                let parameters: [String: Any] = ["page": page, "per_page": limit]
+                var parameters: [String: Any] = ["per_page": limit]
+                if let lastUserId = lastUserId {
+                    parameters["since"] = lastUserId
+                }
                 return try URLEncoding.default.encode(urlRequest, with: parameters)
             }
         }
@@ -60,37 +63,9 @@ extension NetworkClient
 
 extension NetworkClient
 {
-//    func getUsers(page: Int,
-//                  limit: Int,
-//                  success: ((_ result: GetUsersResult?) -> Void)?,
-//                  failure: ErrorCompletion?)
-//    {
-//        let request = UsersRouter.getUsers(page: page, limit: limit)
-//        let theMapper = mapper
-//        
-//        sessionManager.rx.request(urlRequest: request)
-//            .validate()
-//            .responseJSON()
-//            .map { response in
-//                return try theMapper.getUsersResponseMap(response)
-//            }
-//            .subscribe { event in
-//                switch event
-//                {
-//                case .completed:
-//                    break
-//                case .error(let error):
-//                    failure?(error)
-//                case .next(let users):
-//                    success?(users)
-//                }
-//            }
-//            .disposed(by: disposeBag)
-//    }
-    
-    func getUsers(page: Int, limit: Int) -> Observable<GetUsersResult?>
+    func getUsers(lastUserId: Int?, limit: Int) -> Observable<[GetUsersResult]>
     {
-        let request = UsersRouter.getUsers(page: page, limit: limit)
+        let request = UsersRouter.getUsers(lastUserId: lastUserId, limit: limit)
         let theMapper = mapper
         
         return sessionManager.rx.request(urlRequest: request)

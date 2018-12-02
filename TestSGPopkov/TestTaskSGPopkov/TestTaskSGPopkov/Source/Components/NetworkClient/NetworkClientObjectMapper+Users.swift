@@ -12,7 +12,7 @@ typealias DataResponse = (HTTPURLResponse, Data)
 
 extension NetworkClientObjectMapper
 {
-    func getUsersResponseMap(_ response: AlamofireDataResponse) throws -> GetUsersResult?
+    func getUsersResponseMap(_ response: AlamofireDataResponse) throws -> [GetUsersResult]
     {
         let theCode = try validateAlamofireResponse(response)
         
@@ -24,12 +24,12 @@ extension NetworkClientObjectMapper
         }
     }
 
-    private func usersMap(data: Data?) throws -> GetUsersResult?
+    private func usersMap(data: Data?) throws -> [GetUsersResult]
     {
         guard let data = data else {
-            return nil
+            return [GetUsersResult]()
         }
         let decoder = JSONDecoder()
-        return try decoder.decode(GetUsersResult.self, from: data)
+        return try decoder.decode([GetUsersResult].self, from: data)
     }
 }
