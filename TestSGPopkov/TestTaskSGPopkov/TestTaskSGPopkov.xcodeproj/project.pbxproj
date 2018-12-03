@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		187281C4361C3611ABBF6C88 /* Pods_TestTaskSGPopkov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A7D9356E688C878A2BDF67 /* Pods_TestTaskSGPopkov.framework */; };
+		C53C27B421B51A9A00C782C3 /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27B121B51A9A00C782C3 /* ApplicationRouter.swift */; };
+		C53C27B521B51A9B00C782C3 /* ApplicationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27B221B51A9A00C782C3 /* ApplicationRouterProtocol.swift */; };
+		C53C27B621B51A9B00C782C3 /* ApplicationRouter+Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27B321B51A9A00C782C3 /* ApplicationRouter+Routers.swift */; };
+		C53C27B921B51AA100C782C3 /* UsersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27B721B51AA100C782C3 /* UsersRouter.swift */; };
+		C53C27BA21B51AA100C782C3 /* UsersRouterProtocol.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27B821B51AA100C782C3 /* UsersRouterProtocol.swift.swift */; };
+		C53C27BE21B51C0600C782C3 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27BC21B51C0600C782C3 /* BaseRouterProtocol.swift */; };
+		C53C27BF21B51C0600C782C3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27BD21B51C0600C782C3 /* BaseRouter.swift */; };
+		C53C27C221B51F8600C782C3 /* WriteMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27C121B51F8600C782C3 /* WriteMessageVC.swift */; };
+		C53C27C521B5298300C782C3 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27C421B5298300C782C3 /* MessageVC.swift */; };
+		C53C27C721B537FD00C782C3 /* SelectUserVCVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53C27C621B537FD00C782C3 /* SelectUserVCVMProtocol.swift */; };
 		C5DC9C7121B2C8D0009569E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9C7021B2C8D0009569E7 /* Assets.xcassets */; };
 		C5DC9C7421B2C8D0009569E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DC9C7221B2C8D0009569E7 /* LaunchScreen.storyboard */; };
 		C5DC9C8421B2C943009569E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9C8221B2C943009569E7 /* AppDelegate.swift */; };
@@ -47,6 +57,16 @@
 		1210D4D50DDD7C9706FDDD08 /* Pods-TestTaskSGPopkov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskSGPopkov.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTaskSGPopkov/Pods-TestTaskSGPopkov.release.xcconfig"; sourceTree = "<group>"; };
 		1D168EC334C45CA2334032E0 /* Pods-TestTaskSGPopkov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskSGPopkov.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTaskSGPopkov/Pods-TestTaskSGPopkov.debug.xcconfig"; sourceTree = "<group>"; };
 		23A7D9356E688C878A2BDF67 /* Pods_TestTaskSGPopkov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskSGPopkov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C53C27B121B51A9A00C782C3 /* ApplicationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		C53C27B221B51A9A00C782C3 /* ApplicationRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouterProtocol.swift; sourceTree = "<group>"; };
+		C53C27B321B51A9A00C782C3 /* ApplicationRouter+Routers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationRouter+Routers.swift"; sourceTree = "<group>"; };
+		C53C27B721B51AA100C782C3 /* UsersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRouter.swift; sourceTree = "<group>"; };
+		C53C27B821B51AA100C782C3 /* UsersRouterProtocol.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersRouterProtocol.swift.swift; sourceTree = "<group>"; };
+		C53C27BC21B51C0600C782C3 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
+		C53C27BD21B51C0600C782C3 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		C53C27C121B51F8600C782C3 /* WriteMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteMessageVC.swift; sourceTree = "<group>"; };
+		C53C27C421B5298300C782C3 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		C53C27C621B537FD00C782C3 /* SelectUserVCVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserVCVMProtocol.swift; sourceTree = "<group>"; };
 		C5DC9C6621B2C8CF009569E7 /* TestTaskSGPopkov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskSGPopkov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DC9C7021B2C8D0009569E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5DC9C7321B2C8D0009569E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,6 +133,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C53C27BB21B51C0600C782C3 /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				C53C27BC21B51C0600C782C3 /* BaseRouterProtocol.swift */,
+				C53C27BD21B51C0600C782C3 /* BaseRouter.swift */,
+			);
+			path = BaseRouter;
+			sourceTree = "<group>";
+		};
+		C53C27C021B51F6200C782C3 /* WriteMessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				C53C27C121B51F8600C782C3 /* WriteMessageVC.swift */,
+			);
+			path = WriteMessageVC;
+			sourceTree = "<group>";
+		};
+		C53C27C321B5297A00C782C3 /* MessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				C53C27C421B5298300C782C3 /* MessageVC.swift */,
+			);
+			path = MessageVC;
+			sourceTree = "<group>";
+		};
 		C5DC9C5D21B2C8CF009569E7 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +214,8 @@
 		C5DC9C7D21B2C943009569E7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C53C27C321B5297A00C782C3 /* MessageVC */,
+				C53C27C021B51F6200C782C3 /* WriteMessageVC */,
 				C5DC9C8E21B2CBDE009569E7 /* SelectedUsersListVC */,
 				C5DC9C8F21B2CBDE009569E7 /* SelectUserVC */,
 				C5DC9C8821B2CA2B009569E7 /* UsersListVC */,
@@ -242,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */,
+				C53C27C621B537FD00C782C3 /* SelectUserVCVMProtocol.swift */,
 				C5DC9C9021B2CBFC009569E7 /* SelectUserVC.swift */,
 			);
 			path = SelectUserVC;
@@ -392,8 +440,9 @@
 		C5DC9CEA21B46C92009569E7 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				C53C27BB21B51C0600C782C3 /* BaseRouter */,
 				C5DC9CEB21B46C92009569E7 /* AppRouter */,
-				C5DC9CEC21B46C92009569E7 /* SelectUsersStoryRouter */,
+				C5DC9CEC21B46C92009569E7 /* UsersRouter */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -401,15 +450,20 @@
 		C5DC9CEB21B46C92009569E7 /* AppRouter */ = {
 			isa = PBXGroup;
 			children = (
+				C53C27B121B51A9A00C782C3 /* ApplicationRouter.swift */,
+				C53C27B321B51A9A00C782C3 /* ApplicationRouter+Routers.swift */,
+				C53C27B221B51A9A00C782C3 /* ApplicationRouterProtocol.swift */,
 			);
 			path = AppRouter;
 			sourceTree = "<group>";
 		};
-		C5DC9CEC21B46C92009569E7 /* SelectUsersStoryRouter */ = {
+		C5DC9CEC21B46C92009569E7 /* UsersRouter */ = {
 			isa = PBXGroup;
 			children = (
+				C53C27B721B51AA100C782C3 /* UsersRouter.swift */,
+				C53C27B821B51AA100C782C3 /* UsersRouterProtocol.swift.swift */,
 			);
-			path = SelectUsersStoryRouter;
+			path = UsersRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,18 +595,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DC9CB121B2D27E009569E7 /* GetUsersResult.swift in Sources */,
+				C53C27BE21B51C0600C782C3 /* BaseRouterProtocol.swift in Sources */,
+				C53C27B521B51A9B00C782C3 /* ApplicationRouterProtocol.swift in Sources */,
 				C5DC9CC421B415B7009569E7 /* BaseVC.swift in Sources */,
+				C53C27C521B5298300C782C3 /* MessageVC.swift in Sources */,
 				C5DC9C9321B2CC2C009569E7 /* SelectedUsersListVC.swift in Sources */,
+				C53C27BF21B51C0600C782C3 /* BaseRouter.swift in Sources */,
 				C5DC9CB821B3FD8A009569E7 /* UserVM.swift in Sources */,
 				C5DC9CBD21B406C7009569E7 /* KF_ImageView.swift in Sources */,
 				C5DC9CE621B45CBF009569E7 /* LayoutHelperProtocol.swift in Sources */,
 				C5DC9CA521B2CDCA009569E7 /* NetworkClientObjectMapper+Users.swift in Sources */,
 				C5DC9CCB21B428A8009569E7 /* CollectionUserCell.swift in Sources */,
+				C53C27C721B537FD00C782C3 /* SelectUserVCVMProtocol.swift in Sources */,
+				C53C27B621B51A9B00C782C3 /* ApplicationRouter+Routers.swift in Sources */,
 				C5DC9C9D21B2CD5F009569E7 /* ComponentsAssembly.swift in Sources */,
 				C5DC9CD221B42E0F009569E7 /* CommonRxDataSourceModels.swift in Sources */,
+				C53C27C221B51F8600C782C3 /* WriteMessageVC.swift in Sources */,
 				C5DC9C8421B2C943009569E7 /* AppDelegate.swift in Sources */,
 				C5DC9CDA21B439A1009569E7 /* NavigationAssembly.swift in Sources */,
 				C5DC9CE421B45CA4009569E7 /* ShowAlertHelperProtocol.swift in Sources */,
+				C53C27BA21B51AA100C782C3 /* UsersRouterProtocol.swift.swift in Sources */,
 				C5DC9CAC21B2D0DC009569E7 /* StringHelper.swift in Sources */,
 				C5DC9C9121B2CBFC009569E7 /* SelectUserVC.swift in Sources */,
 				C5DC9CE821B4612E009569E7 /* CommonNavBarVCHelperProtocol.swift in Sources */,
@@ -562,12 +624,14 @@
 				C5DC9CA321B2CDCA009569E7 /* NetworkClient.swift in Sources */,
 				C5DC9CE121B44B18009569E7 /* SelectUserVCVM.swift in Sources */,
 				C5DC9CC621B415B7009569E7 /* BaseVCAppearanceProtocol.swift in Sources */,
+				C53C27B421B51A9A00C782C3 /* ApplicationRouter.swift in Sources */,
 				C5DC9CA621B2CDCA009569E7 /* NetworkClientObjectMapper.swift in Sources */,
 				C5DC9CDB21B439A1009569E7 /* NavigationAssemblyProtocol.swift in Sources */,
 				C5DC9C9821B2CD58009569E7 /* RegisteredInstancesManager.swift in Sources */,
 				C5DC9C9C21B2CD5F009569E7 /* ComponentsAssemblyProtocol.swift in Sources */,
 				C5DC9CAE21B2D114009569E7 /* Support.swift in Sources */,
 				C5DC9C8B21B2CA2B009569E7 /* UsersListVC.swift in Sources */,
+				C53C27B921B51AA100C782C3 /* UsersRouter.swift in Sources */,
 				C5DC9CAB21B2D0DC009569E7 /* DebugHelper.swift in Sources */,
 				C5DC9CA421B2CDCA009569E7 /* NetworkClientProtocol.swift in Sources */,
 			);

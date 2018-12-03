@@ -26,14 +26,38 @@ final class NavigationAssembly: NavigationAssemblyProtocol
 
 extension NavigationAssembly
 {
-    func assemblyUsersListVC(vm: UsersListVCVMProtocol) -> UsersListVC {
+    func assemblySelectUserVC() -> SelectUserVC {
+        let vc = instantiateVC(Class: SelectUserVC.self, Storyboard: storyboardWithName(.main)) as! SelectUserVC
+        let vm = SelectUserVCVM(networkClient: components.networkClient)
+        vc.vm = vm
+        vc.selectedUsersListVC = assemblySelectedUsersListVC(vm: vm)
+        vc.usersListVC = assemblyUsersListVC(vm: vm)
+        return vc
+    }
+    
+    private func assemblyUsersListVC(vm: UsersListVCVMProtocol) -> UsersListVC {
         let vc = instantiateVC(Class: UsersListVC.self, Storyboard: storyboardWithName(.main)) as! UsersListVC
         vc.vm = vm
         return vc
     }
     
-    func assemblySelectedUsersListVC(vm: SelectedUsersListVCVMProtocol) -> SelectedUsersListVC {
+    private func assemblySelectedUsersListVC(vm: SelectedUsersListVCVMProtocol) -> SelectedUsersListVC {
         let vc = instantiateVC(Class: SelectedUsersListVC.self, Storyboard: storyboardWithName(.main)) as! SelectedUsersListVC
+        vc.vm = vm
+        return vc
+    }
+    
+//    WriteMessageVC
+    
+    func assemblyWriteMessageVC(vm: SelectedUsersListVCVMProtocol) -> WriteMessageVC {
+        let vc = instantiateVC(Class: WriteMessageVC.self, Storyboard: storyboardWithName(.main)) as! WriteMessageVC
+        vc.selectedUsersListVC = assemblySelectedUsersListVC(vm: vm)
+        vc.messageVC = assemblyMessageVC(vm: vm)
+        return vc
+    }
+    
+    private func assemblyMessageVC(vm: MessageVCVMProtocol) -> MessageVC {
+        let vc = instantiateVC(Class: MessageVC.self, Storyboard: storyboardWithName(.main)) as! MessageVC
         vc.vm = vm
         return vc
     }

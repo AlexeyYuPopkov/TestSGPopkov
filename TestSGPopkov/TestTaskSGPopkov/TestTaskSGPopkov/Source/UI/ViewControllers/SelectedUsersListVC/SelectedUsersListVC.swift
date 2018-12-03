@@ -52,6 +52,7 @@ class SelectedUsersListVC: BaseCollectionVC, LayoutHelperProtocol
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cell = cell as? CollectionUserCell {
+            guard vm.selectUsersDataSource.sectionModels[0].items.count > indexPath.row else { return }
             let row = vm.selectUsersDataSource.sectionModels[0].items[indexPath.row]
             cell.handleTap = { [weak self] cell in
                 self?.vm.removeRow(row)

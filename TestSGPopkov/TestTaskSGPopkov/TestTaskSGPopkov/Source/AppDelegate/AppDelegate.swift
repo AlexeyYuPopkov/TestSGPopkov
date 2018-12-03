@@ -12,11 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    lazy var components: ComponentsAssemblyProtocol = ComponentsAssembly.shared
+    lazy var navigationAssembly: NavigationAssemblyProtocol = NavigationAssembly(componentsAssembly: components)
+    lazy var applicationRouter: ApplicationRouterProtocol = ApplicationRouter(navigationAssembly: navigationAssembly)
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        setupWindow()
         return true
+    }
+    
+    private func setupWindow()
+    {
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        applicationRouter.initialWindow = self.window
+        self.window?.rootViewController = self.applicationRouter.initialVC()
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

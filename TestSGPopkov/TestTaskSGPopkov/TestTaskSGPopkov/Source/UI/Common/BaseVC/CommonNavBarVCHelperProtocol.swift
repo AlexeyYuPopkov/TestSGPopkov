@@ -41,7 +41,6 @@ extension CommonNavBarVCHelperProtocol where Self: UIViewController & BaseVCAppe
     func configureLeftNavigationBarButton(title: String, isEnabled: Bool = true, action: BarButtonItemCompletion? = nil)
     {
         let buttonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(leftButtonAction(_:)))
-        buttonItem.tintColor = barButtonsTintColor
         self.navigationItem.setLeftBarButton(buttonItem, animated: false)
         handleLeftNavigationBarButtonTap = action
         self.navigationItem.leftBarButtonItem?.isEnabled = isEnabled
@@ -50,7 +49,6 @@ extension CommonNavBarVCHelperProtocol where Self: UIViewController & BaseVCAppe
     func configureRightNavigationBarButton(image: UIImage?, isEnabled: Bool = true, action: BarButtonItemCompletion? = nil)
     {
         let buttonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(rightButtonAction(_:)))
-        buttonItem.tintColor = barButtonsTintColor
         self.navigationItem.setRightBarButton(buttonItem, animated: false)
         handleRightNavigationBarButtonTap = action
         self.navigationItem.rightBarButtonItem?.isEnabled = isEnabled
@@ -59,7 +57,6 @@ extension CommonNavBarVCHelperProtocol where Self: UIViewController & BaseVCAppe
     func configureRightNavigationBarButton(title: String, isEnabled: Bool = true, action: BarButtonItemCompletion? = nil)
     {
         let buttonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightButtonAction(_:)))
-        buttonItem.tintColor = barButtonsTintColor
         self.navigationItem.setRightBarButton(buttonItem, animated: false)
         handleRightNavigationBarButtonTap = action
         self.navigationItem.rightBarButtonItem?.isEnabled = isEnabled

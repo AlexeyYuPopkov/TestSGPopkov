@@ -122,13 +122,6 @@ class BaseCollectionVC: UICollectionViewController, BaseVCProtocol
 
 // MARK: AppearanceProtocol
 
-extension BaseVCAppearanceProtocol where Self: UIViewController 
-{
-    var barButtonsTintColor: UIColor {
-        return UIColor.white
-    }
-}
-
 fileprivate extension NavigationBarAppearanceProtocol where Self: UIViewController & BaseVCProtocol
 {
     fileprivate func updateNavigationBarStyleAnimated(animated: Bool)
@@ -181,12 +174,8 @@ fileprivate extension NavigationBarAppearanceProtocol where Self: UIViewControll
         
         bar.barStyle = .black
         bar.barTintColor = UIColor.white
+        bar.tintColor = UIColor.white
         bar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        bar.items?.forEach({
-//            $0.leftBarButtonItems?.forEach { $0.tintColor = UIColor.white }
-//            $0.rightBarButtonItems?.forEach { $0.tintColor = UIColor.white }
-//        })
-
         bar.setBackgroundImage(self.imageWithColor(color: UIColor.black), for: .default)
         bar.shadowImage = self.imageWithColor(color: UIColor.darkGray)
     }

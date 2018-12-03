@@ -12,8 +12,8 @@ protocol NavigationAssemblyProtocol
 {
     func assemblyNavigationControllerWithItem(_ viewController: UIViewController) -> UINavigationController
     
-    func assemblyUsersListVC(vm: UsersListVCVMProtocol) -> UsersListVC
-    func assemblySelectedUsersListVC(vm: SelectedUsersListVCVMProtocol) -> SelectedUsersListVC
+    func assemblySelectUserVC() -> SelectUserVC
+    func assemblyWriteMessageVC(vm: SelectedUsersListVCVMProtocol) -> WriteMessageVC
 }
 
 

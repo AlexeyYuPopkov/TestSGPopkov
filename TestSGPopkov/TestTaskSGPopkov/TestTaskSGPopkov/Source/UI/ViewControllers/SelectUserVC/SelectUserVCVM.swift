@@ -10,24 +10,7 @@ import Foundation
 import RxSwift
 import RxDataSources
 
-fileprivate let Limit = 2
-
-protocol SelectedUsersListVCVMProtocol
-{
-    var selectUsersDataSource: RxCollectionViewSectionedAnimatedDataSource<CommonRxDataSourceModels.Section>! { get set }
-    var selectedUsersSubj: BehaviorSubject<[CommonRxDataSourceModels.Section]> { get }
-    func removeRow(_ row: CommonRxDataSourceModels.Row)
-}
-
-protocol UsersListVCVMProtocol
-{
-    var dataSource: RxTableViewSectionedAnimatedDataSource<CommonRxDataSourceModels.Section>! { get set }
-    var userListSectionsSubj: BehaviorSubject<[CommonRxDataSourceModels.Section]> { get }
-    
-    func userDidSelected()
-    
-    func load()
-}
+fileprivate let Limit = 30
 
 final class SelectUserVCVM: SelectedUsersListVCVMProtocol, UsersListVCVMProtocol
 {
@@ -53,7 +36,7 @@ final class SelectUserVCVM: SelectedUsersListVCVMProtocol, UsersListVCVMProtocol
     }
 }
 
-// MARK: SelectedUsersListVCVMProtocol
+// MARK: SelectedUsersListVCVMProtocol, MessageVCVMProtocol
 
 extension SelectUserVCVM
 {
@@ -69,6 +52,14 @@ extension SelectUserVCVM
             if item.identity == row.identity {
                 (item.model as? UserVM)?.isSelected.onNext(false)
             }
+        }
+    }
+    
+    func didSendButtonTapped() {
+        selectedUsersSubj.onNext([Section(items: [], itemsType: .user, header: nil)])
+        
+        dataSource.sectionModels[0].items.forEach { item in
+            (item.model as? UserVM)?.isSelected.onNext(false)
         }
     }
 }
