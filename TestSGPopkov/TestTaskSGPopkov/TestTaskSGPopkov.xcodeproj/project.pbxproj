@@ -46,7 +46,6 @@
 		C5DC9CD921B439A1009569E7 /* NavigationAssembly+Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD621B439A1009569E7 /* NavigationAssembly+Enums.swift */; };
 		C5DC9CDA21B439A1009569E7 /* NavigationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD721B439A1009569E7 /* NavigationAssembly.swift */; };
 		C5DC9CDB21B439A1009569E7 /* NavigationAssemblyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CD821B439A1009569E7 /* NavigationAssemblyProtocol.swift */; };
-		C5DC9CDF21B43EB1009569E7 /* ComponentsAssembly+VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */; };
 		C5DC9CE121B44B18009569E7 /* SelectUserVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */; };
 		C5DC9CE421B45CA4009569E7 /* ShowAlertHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CE321B45CA4009569E7 /* ShowAlertHelperProtocol.swift */; };
 		C5DC9CE621B45CBF009569E7 /* LayoutHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC9CE521B45CBF009569E7 /* LayoutHelperProtocol.swift */; };
@@ -97,7 +96,6 @@
 		C5DC9CD621B439A1009569E7 /* NavigationAssembly+Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationAssembly+Enums.swift"; sourceTree = "<group>"; };
 		C5DC9CD721B439A1009569E7 /* NavigationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAssembly.swift; sourceTree = "<group>"; };
 		C5DC9CD821B439A1009569E7 /* NavigationAssemblyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAssemblyProtocol.swift; sourceTree = "<group>"; };
-		C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComponentsAssembly+VM.swift"; sourceTree = "<group>"; };
 		C5DC9CE021B44B18009569E7 /* SelectUserVCVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserVCVM.swift; sourceTree = "<group>"; };
 		C5DC9CE321B45CA4009569E7 /* ShowAlertHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlertHelperProtocol.swift; sourceTree = "<group>"; };
 		C5DC9CE521B45CBF009569E7 /* LayoutHelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelperProtocol.swift; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 			children = (
 				C5DC9C9A21B2CD5F009569E7 /* ComponentsAssemblyProtocol.swift */,
 				C5DC9C9B21B2CD5F009569E7 /* ComponentsAssembly.swift */,
-				C5DC9CDE21B43EB1009569E7 /* ComponentsAssembly+VM.swift */,
 			);
 			path = ComponentsAssembly;
 			sourceTree = "<group>";
@@ -620,7 +617,6 @@
 				C5DC9CE821B4612E009569E7 /* CommonNavBarVCHelperProtocol.swift in Sources */,
 				C5DC9C8D21B2CA5A009569E7 /* UsersListCell.swift in Sources */,
 				C5DC9CD921B439A1009569E7 /* NavigationAssembly+Enums.swift in Sources */,
-				C5DC9CDF21B43EB1009569E7 /* ComponentsAssembly+VM.swift in Sources */,
 				C5DC9CA321B2CDCA009569E7 /* NetworkClient.swift in Sources */,
 				C5DC9CE121B44B18009569E7 /* SelectUserVCVM.swift in Sources */,
 				C5DC9CC621B415B7009569E7 /* BaseVCAppearanceProtocol.swift in Sources */,

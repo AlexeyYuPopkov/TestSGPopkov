@@ -105,7 +105,7 @@ extension UsersListVC
 
 // MARK: UITableViewDelegate
 
-extension UsersListVC //: UITableViewDelegate
+extension UsersListVC 
 {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? UsersListCell {

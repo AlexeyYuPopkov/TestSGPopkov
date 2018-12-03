@@ -16,10 +16,4 @@ protocol ComponentsAssemblyManagersProtocol {
     var networkClient: NetworkClientProtocol { get }
 }
 
-protocol ComponentsUsersViewControllersModels
-{
-//    var usersListVCVM: UsersListVCVM { get }
-//    var selectedUsersListVCVM: SelectedUsersListVCVM { get }
-//    func selectUserVCVM(selectedUsersListVCVM: SelectedUsersListVCVM, sersListVCVM: UsersListVCVM)
-}
 

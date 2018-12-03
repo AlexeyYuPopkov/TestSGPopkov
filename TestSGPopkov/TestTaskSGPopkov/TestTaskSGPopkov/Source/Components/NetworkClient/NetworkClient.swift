@@ -36,8 +36,6 @@ final class NetworkClient: NetworkClientProtocol
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
         )
     }
-    
-    
 }
 
 extension NetworkClient

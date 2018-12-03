@@ -47,8 +47,6 @@ extension NavigationAssembly
         return vc
     }
     
-//    WriteMessageVC
-    
     func assemblyWriteMessageVC(vm: SelectedUsersListVCVMProtocol) -> WriteMessageVC {
         let vc = instantiateVC(Class: WriteMessageVC.self, Storyboard: storyboardWithName(.main)) as! WriteMessageVC
         vc.selectedUsersListVC = assemblySelectedUsersListVC(vm: vm)

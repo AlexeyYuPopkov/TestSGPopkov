@@ -21,7 +21,6 @@ protocol BaseVCAppearanceProtocol: NavigationBarAppearanceProtocol {
 protocol NavigationBarAppearanceProtocol {
     var navigationBarStyle: NavigationBarStyle { get }
     func preferredNavigationBarAppearanceStyle() -> NavigationBarAppearanceStyle
-//    func preferredNavigationBarAppearance()
 }
 
 

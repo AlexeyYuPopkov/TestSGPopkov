@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import LGSideMenuController
 
 fileprivate  let NavigationStackSwitchingTransistionDuration = 0.3
 
@@ -79,12 +78,6 @@ extension ApplicationRouter
 {
     private func switchNavigationToStack(aStack: NavigationStack)
     {
-//        var theStack = aStack
-        
-//        if appAssembly.componentsAssembly.authUserProvider.isUserAutorized == false {
-//            theStack = .AuthStack
-//        }
-        
         if aStack == self.currentNavigationStack {
             return
         }

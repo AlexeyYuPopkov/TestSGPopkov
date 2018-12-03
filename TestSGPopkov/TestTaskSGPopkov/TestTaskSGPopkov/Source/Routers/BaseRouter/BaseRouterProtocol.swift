@@ -15,10 +15,4 @@ protocol BaseRouterProtocol
     func setNavigationController(_ nc: UINavigationController?)
 }
 
-//protocol DismissRoutingProtocol
-//{
-//    func dismissViewController(viewController: UIViewController?, animated:Bool,  completion: (() -> Void)?)
-//    func onDismiss(_ vc: UIViewController) -> VoidCompletion
-//    func onDismiss(_ vc: UIViewController, animated: Bool, completion: VoidCompletion?) -> VoidCompletion
-//}
 
